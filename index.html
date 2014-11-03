@@ -3,32 +3,32 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
 	<title>Cases Assessoria - Seguradora</title>
 
+	<!-- Folha de Estilo  -->
 	<link rel="stylesheet" href="/foundation/stylesheets/app.css">
 	
 	<!-- Modernizr -->
 	<script src="/foundation/bower_components/modernizr/modernizr.js"></script>
+
 </head>
-<body>
+<body data-ng-app="CasesApp">
 
-	<div id="wrapper-site">
+	<div id="wrapper-site" data-ng-controller="HomeCtrl">
 
-
-		<div id="top-site-background"> <!-- Style Background -->
+		<div id="top-site-background">
 
 			<header id="header-top-site" class="row">
 
-				<div id="logo" class="large-3 medium-6 columns">
-					<img class="logo-img" src="/img/teste-logo01.png" alt="logotipo da empresa Cases Assessoria">
-				</div>
-
-	
+				<div id="logo" class="large-2 medium-6 columns">
+					<a href="/"><img class="logo-img" src="/img/teste-logo01.png" alt="logotipo da empresa Cases Assessoria"></a>
+				</div>  <!-- LOGOTIPO  -->
 
 				<section id="links-top">
 
 
-					<div class="large-3 medium-6 small-12 column link-top no-padding-left">
+					<div class="large-3 large-offset-1 medium-6 small-12 column link-top no-padding-left">
 						<form action="">
 							<div class="row">
 						    <div class="large-12 columns">
@@ -74,7 +74,7 @@
 						</ul>
 					</div>
 
-				</section>
+				</section>  <!-- fim Links Top (Buscar, Atendimento, Admin)  -->
 
 
 				<section id="links-bottom">
@@ -84,112 +84,78 @@
 						<h2 class="navheader slide-trigger">Menu <span></span></h2>
 
 						<ul class="navigation group">
-							<li><a href="">Home</a></li>
-							<li><a href="">Quem Somos</a></li>
-							<li><a href="" >Servicos</a>
-								<ul>
-									<li><a href="">Apoio Técnico</a></li>
-									<li><a href="">Apoio Comercial</a></li>
-									<li><a href="">Apoio Jurídico</a></li>
-									<li><a href="">Apoios Sinistros</a></li>
-									<li><a href="">Apoio Resseguros</a></li>
+
+							<li><a href="#quem-somos-page" data-ng-click="anchorSection('#quem-somos-page')">Quem Somos</a></li>
+							<li><a href="#servicos-page" data-ng-click="anchorSection('#servicos-page')"><span class="small-symbol">+</span>Servicos</a>
+								<ul class="box-menu">
+									<li><a href="#serv-painel-a-tecn" data-ng-click="servicosSection('#pagina-serv-painel-a-tecn', 1)">Apoio Técnico</a></li>
+									<li><a href="#serv-painel-a-com" data-ng-click="servicosSection('#pagina-serv-painel-a-com', 2)">Apoio Comercial</a></li>
+									<li><a href="#serv-painel-a-jur" data-ng-click="servicosSection('#pagina-serv-painel-a-jur', 3)">Apoio Jurídico</a></li>
+									<li><a href="#serv-painel-a-sin" data-ng-click="servicosSection('#pagina-serv-painel-a-sin', 4)">Apoios Sinistros</a></li>
+									<li><a href="#serv-painel-a-nav" data-ng-click="servicosSection('#pagina-serv-painel-a-nav', 5)">Apoio Resseguros</a></li>
 								</ul>
 							</li>
-							<li><a href="">Produtos</a>
-								<ul>
-									<li><a href="">Riscos Financeiros</a></li>
-									<li><a href="">Riscos Patrimoniais e responsabilidade Civil</a></li>
-									<li><a href="">Riscos Diversos</a></li>
-									<li><a href="">Transportes</a></li>
+							<li><a href="#produtos-page" data-ng-click="anchorSection('#produtos-page')"><span class="small-symbol">+</span>Produtos</a>
+								<ul class="box-menu">
+									<li><a href="#prod-pn-riscos-fin" data-ng-click="produtosSection('#pagina-prod-pn-riscos-fin', 1)">Riscos Financeiros</a></li>
+									<li><a href="#prod-pn-riscos-respn" data-ng-click="produtosSection('#pagina-prod-pn-riscos-respn', 2)">Riscos Patrimoniais & Responsabilidade Civil</a></li>
+									<li><a href="#prod-pn-riscdiv" data-ng-click="produtosSection('#pagina-prod-pn-riscdiv', 3)">Riscos Diversos</a></li>
+									<li><a href="#prod-pn-transp" data-ng-click="produtosSection('#pagina-prod-pn-transp', 4)">Transportes</a></li>
 								</ul>
 							</li>
-							<li><a href="">FAQ/Gloassario</a></li>
+							<li><a href="#faq-glossario-page" data-ng-click="anchorSection('#faq-glossario-page')"><span class="small-symbol">+</span>FAQ/Gloassario</a>
+								<ul class="box-menu">
+									<li><a href="#faq-glossario-page" data-ng-click="anchorSection('#faq-glossario-page')">FAQ/Gloassario</a></li>
+									<li><a href="#informativos-indicatores" data-ng-click="anchorSection('#informativos-indicatores')">Informativos/Indicadores</a></li>
+									<li><a href="#ultimas-noticias" data-ng-click="anchorSection('#ultimas-noticias')">Últimas Notícias</a></li>
+								</ul>
+
+							</li>
+							<li><a href="#">Outros</a></li>
 						</ul>
 
 					</nav>
 
-				</section>
+				</section> <!-- fim Links Bottom - Menu Principal  -->
 
 
-			</header>
+			</header> <!-- fim Header  -->
 
-		</div>
+		</div> <!-- fim background Header  -->
 
 		<div class="margem-fixed row"></div>
+
+		
 
 		<div class="fundo-banner">
 
 			<div id="banner-home" class="row">
 
-				<img src="http://dummyimage.com/1100x300/000/fff&text=banner+-+frase+de+efeito" alt="">
+				<img src="http://dummyimage.com/1100x500/000000/fff&text=Banner+-+Slogan+da+Empresa" alt="">
 
 			</div>
-		</div>
-		
-		<div id="widgets">
+		</div> <!-- BANNER  -->
 
-			<h1>Informativos e Indicadores</h1>
+		<div id="quem-somos-page" class="fundo-secao-site">
 
-			<section id="widgets-home-top" class="row">
+			<h2 class="titulo-parte-home">Quem Somos</h2>
 
-				<aside class="large-3 columns">
-					Links Uteis
-				</aside>
-
-				<aside class="large-3 columns">
-					Previsao do Tempo
-				</aside>
-
-				<aside class="large-3 columns">
-					Indices Economicos
-				</aside>
-
-				<aside class="large-3 columns">
-					Ultimas Atualizacoes
-				</aside>
-
-			</section>
-
-			<h1>Ultimas Noticias</h1>
-
-			<section id="widgets-home-bottom" class="row">
-
-				<aside class="large-4 columns">
-					Site 01 - RSS
-				</aside>
-
-				<aside class="large-4 columns">
-					Site 02 - RSS
-				</aside>
-
-				<aside class="large-4 columns">
-					Site 03 - RSS
-				</aside>
-
-			</section>
-
-		</div>
-		
-		<div id="quem-somos-page">
-
-			<h1>Quem Somos</h1>
-
-			<article class="row">
+			<article class="row fundo-pagina-secao">
 			    <p>A <b>Cases Assessoria</b> ...sobre a sua empresa Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nulla nemo, ad quibusdam consequuntur sapiente officia natus reprehenderit, doloribus, in dolores dolorum beatae praesentium rerum ipsum recusandae odio autem quis nisi nam deserunt explicabo distinctio voluptatibus nesciunt. Amet sit tempora nisi, dolor, sunt officia possimus in facere esse provident fuga iure, assumenda, voluptate ab suscipit! Quaerat aperiam, quisquam a id incidunt possimus optio fugit et sit beatae, soluta dolorem quos ratione quis expedita officiis maiores alias. Pariatur maiores odio nobis eius vel, dolorum in totam tenetur minima aliquid saepe, repellat sint nesciunt nam voluptates cupiditate ullam. Cum dolore temporibus, exercitationem numquam. </p>
 			    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eaque quos repudiandae excepturi unde modi molestiae nostrum harum, iste dolor perspiciatis accusamus temporibus distinctio voluptates aliquid adipisci blanditiis commodi voluptatum sequi natus id deleniti odio deserunt esse praesentium labore. Vel quod perspiciatis maxime deserunt aut quisquam veniam illo at sequi pariatur.</p>
 			    ...
 			    <footer>
 
-			        <button>Saiba Mais Sobre a Berkley</button>
-			        <button>Conheça Nossos Corretores</button>
+			        <a data-reveal-id="historiaBerkley">Saiba Mais Sobre a Berkley</a>
+			        <a data-reveal-id="nossoCorretores">Conheça Nossos Corretores</a>
 
 			    </footer>
 
 			</article>
 
-		</div>
+		</div> <!-- fim div Quem Somos  -->
 
-		<div id="servicos-page">
+		<div id="servicos-page" class="fundo-secao-site">
 
 			<h1>Serviços</h1>
 
@@ -199,9 +165,9 @@
 
 				  <dd class="accordion-navigation">
 
-				    <a href="#serv-painel-a-tecn">Apoio Técnico</a>
+				    <a href="#serv-painel-a-tecn" id="pagina-serv-painel-a-tecn">Apoio Técnico</a>
 
-				    <div id="serv-painel-a-tecn" class="content active">
+				    <div id="serv-painel-a-tecn" class="content">
 				      <p>Sobre apoio técnico... Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Distinctio veniam nihil accusamus debitis fugit, ea porro non optio cupiditate corrupti obcaecati quam tempore, exercitationem earum molestiae voluptates saepe delectus, voluptas!</p>
 				      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Recusandae eligendi architecto, atque ab eum! Excepturi inventore magnam quia voluptatem minima corrupti earum ducimus! Nemo asperiores ducimus laborum suscipit cupiditate? Accusantium obcaecati iure debitis officia aliquam totam quis iste pariatur nostrum, maiores aut assumenda alias. Nostrum quidem id libero qui eveniet explicabo, voluptates natus et, porro, quos est nesciunt vero consequuntur in! Debitis, iusto sit reprehenderit! Magnam qui ipsa delectus, esse, laborum quasi excepturi soluta laudantium, expedita fugiat doloremque eveniet nesciunt perspiciatis, suscipit a totam illum est similique consequatur. Facere magnam ab at consequatur quos. Velit libero ipsam, laborum est officia!</p>
 				    </div>
@@ -210,7 +176,7 @@
 
 				  <dd class="accordion-navigation">
 
-				    <a href="#serv-painel-a-com">Apoio Comercial</a>
+				    <a href="#serv-painel-a-com" id="pagina-serv-painel-a-com">Apoio Comercial</a>
 
 				    <div id="serv-painel-a-com" class="content">
 				      <p>Sobre apoio comercial... Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Distinctio veniam nihil accusamus debitis fugit, ea porro non optio cupiditate corrupti obcaecati quam tempore, exercitationem earum molestiae voluptates saepe delectus, voluptas!</p>
@@ -220,7 +186,7 @@
 
 				  <dd class="accordion-navigation">
 
-				    <a href="#serv-painel-a-jur">Apoio Jurídico</a>
+				    <a href="#serv-painel-a-jur" id="pagina-serv-painel-a-jur">Apoio Jurídico</a>
 
 				    <div id="serv-painel-a-jur" class="content">
 				      <p>Sobre apoio jurídico... Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Distinctio veniam nihil accusamus debitis fugit, ea porro non optio cupiditate corrupti obcaecati quam tempore, exercitationem earum molestiae voluptates saepe delectus, voluptas!</p>
@@ -230,7 +196,7 @@
 
 				  <dd class="accordion-navigation">
 
-				    <a href="#serv-painel-a-sin">Apoio Sinistros</a>
+				    <a href="#serv-painel-a-sin" id="pagina-serv-painel-a-sin">Apoio Sinistros</a>
 
 				    <div id="serv-painel-a-sin" class="content">
 				      <p>Sobre apoio sinistros... Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Distinctio veniam nihil accusamus debitis fugit, ea porro non optio cupiditate corrupti obcaecati quam tempore, exercitationem earum molestiae voluptates saepe delectus, voluptas!</p>
@@ -240,7 +206,7 @@
 
 				  <dd class="accordion-navigation">
 
-				    <a href="#serv-painel-a-nav">Apoio Resseguros</a>
+				    <a href="#serv-painel-a-nav" id="pagina-serv-painel-a-nav">Apoio Resseguros</a>
 
 				    <div id="serv-painel-a-nav" class="content">
 				      <p>Sobre apoio resseguros... Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Distinctio veniam nihil accusamus debitis fugit, ea porro non optio cupiditate corrupti obcaecati quam tempore, exercitationem earum molestiae voluptates saepe delectus, voluptas!</p>
@@ -249,19 +215,18 @@
 				  </dd>
 
 				</dl>
-			</section>
+			</section> <!-- fim section Serviços  -->
 
 		</div>
 
-		<div id="produtos-page">
+		<div id="produtos-page" class="fundo-secao-site">
 			<h1>Produtos</h1>
 
 			<section id="produtos-accordion" class="row">
+
 				<dl class="accordion" data-accordion>
 				  <dd class="accordion-navigation">
-
-				    <a href="#prod-pn-riscos-fin">Riscos Financeiros</a>
-
+				    <a href="#prod-pn-riscos-fin" id="pagina-prod-pn-riscos-fin">Riscos Financeiros</a>
 				    <div id="prod-pn-riscos-fin" class="content active">
 				      <dl class="tabs" data-tab>
 				        <dd><a href="#prod-pn-riscf-seg">Seguro Garantia</a></dd>
@@ -277,8 +242,9 @@
 				      </div>
 				    </div>
 				  </dd>
+
 				  <dd class="accordion-navigation">
-				    <a href="#prod-pn-riscos-respn">Riscos Patrimoniais e Responsabilidades</a>
+				    <a href="#prod-pn-riscos-respn" id="pagina-prod-pn-riscos-respn">Riscos Patrimoniais e Responsabilidades</a>
 				    <div id="prod-pn-riscos-respn" class="content">
 				      <dl class="tabs" data-tab>
 				        <dd class="active"><a href="#prod-pn-riscp-eng">Riscos de Engenharia</a></dd>
@@ -297,22 +263,30 @@
 				        </div>
 				    </div>
 				  </dd>
+
 				  <dd class="accordion-navigation">
-				    <a href="#prod-pn-transp">Transportes</a>
-				    <div id="prod-pn-transp" class="content">
-				      Sobre Transportes. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+				    <a href="#prod-pn-riscdiv" id="pagina-prod-pn-riscdiv">Riscos Diversos</a>
+				    <div id="prod-pn-riscdiv" class="content">
+				      Sobre Riscos Diversos. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
 				    </div>
 				  </dd>
+
+				  <dd class="accordion-navigation">
+				    <a href="#prod-pn-transp" id="pagina-prod-pn-transp">Transportes</a>
+				    <div id="prod-pn-transp" class="content">
+				      Sobre Transportes. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+				    </div>e
+				  </dd>
 				</dl>
-			</section>
+			</section><!-- fim section Produtos  -->
 		</div>
 
-		<div id="faq-glossario-page" >
-			<a href="#faq"></a>
+		<div id="faq-glossario-page" class="fundo-secao-site">
 
-			<h1>FAQ/Glossário</h1>
+			<h1 class="titulo-parte-home">FAQ/Glossário</h1>
 
-			<div class="row">
+			<div class="row fundo-pagina-secao">
+
 				[ Perguntas mais frequentes(umas 10) ] <br>
 				<a href="">Pergunta 1</a>
 				<br>
@@ -336,11 +310,86 @@
 				<br>
 
 				<a href="">Glossário</a> [abrir moda]
+
 			</div>
 
-		</div>
+		</div> <!-- fim FAQ / Glossário  -->
 
-		<footer>
+		<section id="widgets-home-top" class="fundo-secao-site">
+
+			<h1 id="informativos-indicatores">Informativos e Indicadores</h1>
+
+			<div class="row">
+
+				<aside class="large-3 columns padded-column" >
+					<div class="column-content widget-top widget-box">
+						<h3 class="title-widget">
+							Links Uteis
+						</h3>
+						<a href="">Link 1</a> <br>
+						<a href="">Link 2</a> <br>
+						<a href="">Link 3</a> <br>
+						<a href="">Link 4</a> <br>
+						<a href="">Link 5</a> <br>
+						<a href="">Link 6</a> <br>
+						<a href="">Link 7</a> <br>
+						<a href="">Link 8</a> <br>
+						<a href="">Link 9</a> <br>
+						<a href="">Link 10</a> <br>
+					</div>
+				</aside>
+
+				<aside class="large-3 columns padded-column">
+					<div class="column-content widget-top widget-box">
+						Previsao do Tempo
+					</div>
+				</aside>
+
+				<aside class="large-3 columns padded-column">
+					<div class="column-content widget-top widget-box">
+						Indices Economicos
+					</div>
+				</aside>
+
+				<aside class="large-3 columns padded-column">
+					<div class="column-content widget-top widget-box">
+						Ultimas Atualizacoes
+					</div>
+				</aside>
+
+			</div>
+
+		</section> <!-- fim widgets top -->
+
+		<section id="widgets-home-bottom" class="fundo-secao-site">
+
+			<h1 id="ultimas-noticias">Ultimas Noticias</h1>
+
+			<div class="row">
+
+				<aside class="large-4 columns padded-column">
+					<div class="column-content widget-bottom widget-box">
+						Site 01 - RSS
+					</div>
+				</aside>
+
+				<aside class="large-4 columns padded-column">
+					<div class="column-content widget-bottom widget-box">
+						Site 02 - RSS
+					</div>
+				</aside>
+
+				<aside class="large-4 columns padded-column">
+					<div class="column-content widget-bottom widget-box">
+						Site 03 - RSS
+					</div>
+				</aside>
+
+			</div>
+
+		</section> <!-- fim widgets bottom  -->
+
+		<footer id="rodape">
 			Footer
 			<div class="row">
 
@@ -357,37 +406,84 @@
 				</div>
 
 			</div>
-		</footer>
+		</footer>  <!-- fim rodape  -->
 
-		</div>
+
+		<!-- início Janelas Modais -->
+
+		<div id="historiaBerkley" class="reveal-modal" data-reveal>
+			<h2>História da Berkely</h2>
+			<p class="lead">Subtitulo </p>
+			<p>História da Berkley ... Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugiat vero molestias reiciendis, iure hic, maxime aperiam assumenda ipsa temporibus neque numquam perferendis, nostrum harum facere. Commodi incidunt rem assumenda sed doloremque magnam provident delectus obcaecati libero praesentium similique unde explicabo rerum pariatur, ut, natus. Architecto atque, modi impedit? Voluptas facere cupiditate, minima ad! Repudiandae, earum aut inventore aspernatur, beatae magni repellat ipsam omnis dolore quas voluptatibus expedita quam, cum et qui tempora obcaecati distinctio tenetur similique necessitatibus pariatur. Ipsa, repellat, vero! Omnis porro culpa nihil explicabo dignissimos, a vitae vel molestias. Inventore vero odio consectetur deserunt, aperiam porro, quam nihil.</p>
+			<a class="close-reveal-modal">&#215;</a>
+		</div> <!-- fim modal historiaBerkley -->
+
+		<div id="nossoCorretores" class="reveal-modal" data-reveal>
+			<h2>Microformats VCARDS dos Corretores</h2>
+			tabela com os corretores <br>
+			tabela com os corretores <br>
+			tabela com os corretores <br>
+			tabela com os corretores <br>
+			tabela com os corretores <br>
+			tabela com os corretores <br>
+			tabela com os corretores <br>
+			tabela com os corretores <br>
+			tabela com os corretores <br>
+			tabela com os corretores <br>
+			tabela com os corretores <br>
+			tabela com os corretores <br>
+			tabela com os corretores <br>
+			tabela com os corretores <br>
+			tabela com os corretores <br>
+			tabela com os corretores <br>
+			tabela com os corretores <br>
+			tabela com os corretores <br>
+			tabela com os corretores <br>
+			tabela com os corretores <br>
+			tabela com os corretores <br>
+			tabela com os corretores <br>
+			tabela com os corretores <br>
+			tabela com os corretores <br>
+			tabela com os corretores <br>
+			tabela com os corretores <br>
+			tabela com os corretores <br>
+			tabela com os corretores <br>
+			tabela com os corretores <br>
+			tabela com os corretores <br>
+			tabela com os corretores <br>
+			tabela com os corretores <br>
+			tabela com os corretores <br>
+			tabela com os corretores <br>
+			tabela com os corretores <br>
+			tabela com os corretores <br>
+			tabela com os corretores <br>
+			tabela com os corretores <br>
+			tabela com os corretores <br>
+			tabela com os corretores <br>
+			tabela com os corretores <br>
+			tabela com os corretores <br>
+			<a class="close-reveal-modal">&#215;</a>
+		</div> <!-- fim modal nossoCorretores -->
+
+		<!-- fim Janelas Modais -->
+
+	</div> <!-- fim wrapper-site -->
+
+	<!-- Jquery -->
 	<script src="/foundation/bower_components/jquery/dist/jquery.js"></script>
 
+	<!-- Plugins Jquery e Outros -->
 	<script src="/assets/js/plugins/mobile.collapse.js"></script>
 
+	<!-- Foundation e Dependência  -->
 	<script src="/foundation/bower_components/foundation/js/foundation.js"></script>
 	<script src="/foundation/bower_components/foundation/js/foundation/foundation.accordion.js"></script>
+	
+	<!-- Angular e Dependências -->
+	<script src="/assets/js/angular.min.js"></script>
 
-	<script>
-	$(document).ready(function () {
-
-		$(document).foundation({
-		    accordion: {
-			    // specify the class used for accordion panels
-			    content_class: 'content',
-			    // specify the class used for active (or open) accordion panels
-			    active_class: 'active',
-			    // allow multiple accordion panels to be active at the same time
-			    multi_expand: false,
-			    // allow accordion panels to be closed by clicking on their headers
-			    // setting to false only closes accordion panels when another is opened
-			    toggleable: true
-			  }
-		  });
-
-		$('.slide-trigger').collapsable();
-
-	});
-	</script>
+	<!-- Aplicação CasesApp (angular)  -->
+	<script src="/assets/js/app/cases-app.js"></script>
 
 
 </body>

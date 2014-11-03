@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html class="no-js" lang="pt-br">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<title>Cases Assessoria - Seguradora</title>
+
+	<link rel="stylesheet" href="/foundation/stylesheets/app.css">
+	
+	<!-- Modernizr -->
+	<script src="/foundation/bower_components/modernizr/modernizr.js"></script>
+
+	<style>
+	body {
+		padding: 100px;
+		background: green;
+	}
+	/* teste */
+	.teste {
+		height: 100%;
+		position: relative;
+	}
+	.box{
+	  background: #FFFFFF;
+	  border: solid 1px #FFFFFF;
+	  font-size: 0.875rem;
+	  z-index: 89;
+	  margin-top: 2px;
+	  max-width: 200px;
+	  box-shadow: -2px 2px 10px black;
+
+	}
+
+	/*the triangle but its being cut off*/
+	.box:before{
+	  content: "";
+	  display: block;
+	  width: 0;
+	  height: 0;
+	  border: inset 6px;
+	  border-color: transparent transparent #FFFFFF transparent;
+	  border-bottom-style: solid;
+	  position: absolute;
+	  top: -12px;
+	  left: 10px;
+	  z-index: 89;
+
+	}
+
+	</style>
+</head>
+<body>
+
+  	<div class="teste">
+  		<div class="box">
+  			teste <br>
+  			teste <br>
+  			teste <br>
+  			teste <br>
+  			teste <br>
+  			teste <br>
+  			teste <br>
+  			teste <br>
+  			teste <br>
+  			teste <br>
+  			teste <br>
+  			teste <br>
+  			teste <br>
+  		</div>
+  	</div>
+
+	<script src="/foundation/bower_components/jquery/dist/jquery.js"></script>
+
+	<script src="/assets/js/plugins/mobile.collapse.js"></script>
+
+	<script src="/foundation/bower_components/foundation/js/foundation.js"></script>
+	<script src="/foundation/bower_components/foundation/js/foundation/foundation.accordion.js"></script>
+
+	<script>
+	$(document).ready(function () {
+
+		$(document).foundation({
+		    accordion: {
+			    // specify the class used for accordion panels
+			    content_class: 'content',
+			    // specify the class used for active (or open) accordion panels
+			    active_class: 'active',
+			    // allow multiple accordion panels to be active at the same time
+			    multi_expand: false,
+			    // allow accordion panels to be closed by clicking on their headers
+			    // setting to false only closes accordion panels when another is opened
+			    toggleable: true
+			  }
+		  });
+
+		$('.slide-trigger').collapsable();
+
+	});
+	</script>
+
+
+</body>
+</html>
